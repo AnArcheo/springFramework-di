@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: ES
+
+sfg:
+  username: YamlUsername
+  password: YamlPassword
+  jdbcUrl: YamlUrl
