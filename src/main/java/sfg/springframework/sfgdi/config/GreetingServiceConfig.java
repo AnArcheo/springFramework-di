@@ -9,7 +9,7 @@ import sfg.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import sfg.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import sfg.springframework.sfgdi.services.*;
 
-@PropertySource("classpath:datasource.properties")
+//@PropertySource("classpath:datasource.properties") - sours will be taken from application.properties
 @ImportResource("classpath:springFramework-config.xml")
 @Configuration
 public class GreetingServiceConfig {

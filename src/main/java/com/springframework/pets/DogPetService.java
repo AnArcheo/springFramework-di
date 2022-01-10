@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 //@Primary
-//@Service
+@Service
 public class DogPetService implements PetService{
     @Override
     public String getPetType() {
