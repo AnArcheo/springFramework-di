@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import sfg.springframework.sfgdi.controllers.*;
+import sfg.springframework.sfgdi.services.PrototypeBean;
+import sfg.springframework.sfgdi.services.SingletonBean;
 
 
 @ComponentScan(basePackages = {"com.springframework.pets", "sfg.springframework.sfgdi"})
@@ -38,6 +40,17 @@ public class SfgDiApplication {
 		PetController petController = ctx.getBean("petController", PetController.class);
 		System.out.println("----The Best Pet Is----");
 		System.out.println(petController.getPet());
+
+		System.out.println("---------Bean Scopes");
+		SingletonBean singletonBean1 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean1.getMyScope());
+		SingletonBean singletonBean2 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean2.getMyScope());
+
+		PrototypeBean prototypeBean1 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean1.getMyScope());
+		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean2.getMyScope());
 	}
 
 }
